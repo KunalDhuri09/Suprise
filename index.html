@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#240b19">
+<title>One Little Date? ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+:root{--wine:#4b102b;--rose:#f4a9bd;--pink:#ffdae4;--cream:#fff6f0;--gold:#e9c58a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#240b19;color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 18% 12%,#77284b 0,transparent 42%),radial-gradient(ellipse at 90% 80%,#4a1838 0,transparent 40%),linear-gradient(135deg,#1c0814,#351024 55%,#190711)}
+#stars,.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:3}
+.star{position:absolute;color:#ffdce6;opacity:.5;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:1;transform:scale(1.4)}}
+.wrap{width:min(1000px,100%);margin:auto;padding:26px 22px 70px}
+.topline{display:flex;align-items:center;justify-content:center;gap:12px;color:#f4c8d5;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 28px}
+.topline:before,.topline:after{content:"";height:1px;width:40px;background:#b86c88}
+.hero{text-align:center;position:relative;padding:38px 0 46px}
+.eyebrow{color:var(--gold);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem}
+h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(4rem,12vw,8.5rem);line-height:1;margin:18px 0 10px;text-shadow:0 0 35px #ff9fbd38}
+h1 span{color:#ffb9ce}
+.subtitle{font-family:'Playfair Display',serif;font-size:clamp(1rem,3vw,1.3rem);color:#f7dce4;max-width:570px;line-height:1.8;margin:0 auto}
+.heart-wrap{width:124px;height:124px;margin:36px auto 28px;display:grid;place-items:center;position:relative}
+.heart-ring{position:absolute;inset:0;border:1px solid #e9a7bd75;border-radius:50%;animation:pulse 3s infinite}
+.heart-ring:nth-child(2){inset:-11px;animation-delay:.7s}
+.big-heart{font-size:4.5rem;filter:drop-shadow(0 0 24px #ff638e6e);animation:heartbeat 1.8s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.13)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
+@keyframes pulse{0%{transform:scale(.88);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+.btn{border:0;border-radius:999px;padding:15px 25px;font:600 .95rem 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:linear-gradient(135deg,#ffbfd0,#f08eaa);color:#421226;box-shadow:0 10px 30px #f08eaa35}
+.btn-ghost{background:#ffffff0b;border:1px solid #f4c7d45e;color:#ffe9ef}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.section{margin:38px auto 0;max-width:790px}
+.glass{background:linear-gradient(135deg,#ffffff0d,#ffffff04);border:1px solid #f7d6e326;border-radius:25px;box-shadow:0 20px 60px #09030b24;backdrop-filter:blur(12px)}
+.letter{padding:clamp(25px,6vw,48px);position:relative;overflow:hidden}
+.letter:after{content:"♡";position:absolute;right:18px;top:-25px;font:9rem 'Great Vibes';color:#ffb6cc0b;pointer-events:none}
+.kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.letter h2,.date-card h2,.question h2{font:500 clamp(1.6rem,5vw,2.5rem) 'Playfair Display',serif;margin:0 0 20px}
+.letter p{font-size:1rem;line-height:1.95;color:#f8dfe7;margin:0 0 15px}
+.signature{font:2.4rem 'Great Vibes',cursive;color:#ffb6cc;margin-top:20px}
+.date-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.date-card{padding:28px;text-align:center}
+.date-number{font:5.2rem 'Playfair Display',serif;color:#ffd3de;line-height:1.05}
+.date-month{letter-spacing:.27em;text-transform:uppercase;font-size:.8rem;color:var(--gold);margin-top:7px}
+.date-note{color:#f3ceda;line-height:1.7;margin-top:17px;font-size:.9rem}
+.mini-title{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:13px}
+.question{padding:clamp(26px,6vw,45px);text-align:center}
+.question h2{margin-bottom:10px}
+.question .small{color:#edcbd6;line-height:1.7;margin:0 auto 24px;max-width:450px}
+.yes-button{font-size:1.05rem;padding:17px 31px}
+.no-button{position:relative}
+.response{display:none;margin:24px auto 0;max-width:540px;padding:22px;border-radius:18px;background:#ffbfd015;border:1px solid #ffbfd04d;color:#ffe8ee;line-height:1.8}
+.response.show{display:block;animation:rise .55s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+footer{text-align:center;color:#c99aaa;font-size:.76rem;letter-spacing:.08em;margin-top:46px}
+footer span{color:#ffb6cc}
+.floating{position:fixed;bottom:-30px;z-index:4;pointer-events:none;animation:floatUp linear forwards;opacity:.75}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.confetti{position:fixed;top:-20px;z-index:9;pointer-events:none;animation:fall 3.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@media(max-width:600px){.wrap{padding:18px 16px 48px}.hero{padding:30px 0 32px}.date-grid{grid-template-columns:1fr}.date-card{padding:25px}.date-number{font-size:4.5rem}.letter p{font-size:.95rem}.topline{font-size:.62rem;letter-spacing:.15em}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<div class="wrap">
+  <div class="topline">a little note from my heart</div>
+  <header class="hero">
+    <div class="eyebrow">To my favourite person ♡</div>
+    <h1>Hey, <span>babe.</span></h1>
+    <p class="subtitle">Some moments don't go exactly as planned…<br>but the feelings behind them are always real.</p>
+    <div class="heart-wrap" aria-hidden="true"><div class="heart-ring"></div><div class="heart-ring"></div><div class="big-heart">❤️</div></div>
+    <div class="eyebrow">I have one tiny, very important question</div>
+  </header>
+
+  <section class="section glass letter">
+    <div class="kicker">A little something I wanted to say</div>
+    <h2>Because you deserve a moment that's just yours.</h2>
+    <p>Hi, babe ❤️</p>
+    <p>I know whatever happened that day was in the heat of the moment. Honestly, I'd been planning to propose to you at a nice place, and things just happened differently from how I'd imagined.</p>
+    <p>But you know what? I don't regret what happened that day—not even a little. Because it was <em>us</em>. And still, you're my girl, and you deserve nothing less than the best. ❤️</p>
+    <p>You deserve a beautiful date, a little effort, lots of love, and a memory we can look back on years from now and smile about. So I'd love to make a proper little moment for us—one that feels as special as you are to me.</p>
+    <p>Just you and me. A lovely place. A little romance. And a memory we'll keep. 🥹</p>
+    <div class="signature">All my love, always ♡</div>
+  </section>
+
+  <section class="section date-grid" aria-label="Date details">
+    <div class="glass date-card">
+      <div class="mini-title">Save this little day</div>
+      <div class="date-number">24</div>
+      <div class="date-month">October · 2026</div>
+      <div class="date-note">One date. Two hearts.<br>A memory in the making. 💗</div>
+    </div>
+    <div class="glass date-card" style="display:flex;flex-direction:column;justify-content:center">
+      <div class="mini-title">The plan</div>
+      <h2 style="font-size:1.8rem;margin:5px 0 12px">You + Me</h2>
+      <div style="font-size:2.3rem;margin:6px 0 12px">🥂 🌹 ✨</div>
+      <div class="date-note">A special date, made with love.<br>And hopefully, lots of your smiles.</div>
+    </div>
+  </section>
+
+  <section class="section glass question" id="the-question">
+    <div class="kicker">Okay, here comes the question…</div>
+    <h2>Will you go on a date with me? 🥹❤️</h2>
+    <p class="small">Saturday, 24th October. Let me make it special for you, my girl. No pressure—just a question asked with all my heart. 🫶🏻</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary yes-button" id="yesBtn">YES, BABE! 💖</button>
+    </div>
+    <div class="response" id="response" role="status" aria-live="polite"></div>
+  </section>
+  <footer>Made with <span>♥</span>, just for you · 24.10.2026</footer>
+</div>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<45;i++){const s=document.createElement('span');s.className='star';s.textContent=Math.random()>.55?'✦':'·';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(8+Math.random()*13)+'px';s.style.animationDelay=(Math.random()*4)+'s';stars.appendChild(s)}
+function floatHeart(){const h=document.createElement('div');h.className='floating';h.textContent=['♡','♥','💗','✧'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'%';h.style.fontSize=(15+Math.random()*23)+'px';h.style.animationDuration=(6+Math.random()*5)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),12000)}
+setInterval(floatHeart,900);
+const response=document.getElementById('response');
+document.getElementById('yesBtn').addEventListener('click',()=>{
+ response.innerHTML='<strong>AHHH, YOU SAID YES! 💖🥹</strong><br>You just made me the happiest person. Saturday, 24th October—it’s a date! 🌹✨<br><br><span style="font-family:Great Vibes,cursive;font-size:2rem">Can’t wait to make this memory with you. ❤️</span>';
+ response.classList.add('show');celebrate();
+});
+function celebrate(){const bits=['💗','💖','💕','✨','🌸','♥'];for(let i=0;i<75;i++){const c=document.createElement('div');c.className='confetti';c.textContent=bits[Math.floor(Math.random()*bits.length)];c.style.left=Math.random()*100+'%';c.style.fontSize=(12+Math.random()*22)+'px';c.style.animationDuration=(2+Math.random()*3)+'s';c.style.animationDelay=(Math.random()*.8)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),6000)}}
+</script>
+</body>
+</html>
