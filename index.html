@@ -119,7 +119,7 @@ function floatHeart(){const h=document.createElement('div');h.className='floatin
 setInterval(floatHeart,900);
 const response=document.getElementById('response');
 document.getElementById('yesBtn').addEventListener('click',()=>{
- response.innerHTML='<strong>AHHH, YOU SAID YES! 💖🥹</strong><br>You just made me the happiest person. Saturday, 24th October—it’s a date! 🌹✨<br><br><span style="font-family:Great Vibes,cursive;font-size:2rem">Can’t wait to make this memory with you. ❤️</span>';
+ response.innerHTML='<strong>AHHH, YOU SAID YES! 💖🥹</strong><br>You just made me the happiest person.DATE —it’s a date! 🌹✨<br><br><span style="font-family:Great Vibes,cursive;font-size:2rem">Can’t wait to make this memory with you. ❤️</span>';
  response.classList.add('show');celebrate();
 });
 function celebrate(){const bits=['💗','💖','💕','✨','🌸','♥'];for(let i=0;i<75;i++){const c=document.createElement('div');c.className='confetti';c.textContent=bits[Math.floor(Math.random()*bits.length)];c.style.left=Math.random()*100+'%';c.style.fontSize=(12+Math.random()*22)+'px';c.style.animationDuration=(2+Math.random()*3)+'s';c.style.animationDelay=(Math.random()*.8)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),6000)}}
